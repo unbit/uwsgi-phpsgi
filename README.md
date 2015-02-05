@@ -4,6 +4,7 @@ uWSGI experimental plugin for implementing a WSGI/PSGI/Rack-like interface for p
 
 This is only a proof of concept, do not use it unless you want to help defining specs, fixing bugs or hurt yourself
 
+The plugin does not (still) manage memory in the right way, so it will extremely leak
 
 Installation
 ============
