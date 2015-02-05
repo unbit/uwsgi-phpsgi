@@ -71,7 +71,7 @@ The function has to return an array of 3 elements or a string.
 
 In the second case a 200 OK status is returned followed by the returned string (NOTE: this is a shitty way, do not use it, it is here only for testing).
 
-The first (and the right) one is returning the http status string as the first array item, an associative array of headers as teh second, and a string (or an array of strings) as the body:
+The first (and the right) one is returning the http status string as the first array item, an associative array of headers as the second, and a string (or an array of strings) as the body:
 
 ```php
 return ["200 Foobar", ["Content-Type" => "text/plain"], ["Hello"]];
