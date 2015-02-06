@@ -113,6 +113,8 @@ static int phpsgi_generate_header(struct wsgi_request *wsgi_req, HashTable *head
 		char *key;
     		unsigned int key_len;
 		if (zend_hash_get_current_key_ex(headers, &key, &key_len, &index, 0, &pointer) != HASH_KEY_IS_STRING) return -1;
+		if (key_len == 0) return -1;
+		key_len--;
 		uwsgi_log("HEADER %.*s\n", key_len, key);	
 		if (Z_TYPE_PP(data) == IS_STRING) {
 			if (uwsgi_response_add_header(wsgi_req, key, key_len, Z_STRVAL_PP(data), Z_STRLEN_PP(data))) return -1;
